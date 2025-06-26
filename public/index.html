@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatCrime 추리 게임</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>🔍 ChatCrime: 추리 게임</h1>
+
+    <section id="story-box">
+      <h2>사건 개요</h2>
+      <p id="story"></p>
+      <button onclick="loadSuspects()">용의자 보기</button>
+    </section>
+
+    <section>
+      <h2>용의자 목록</h2>
+      <ul id="suspect-list"></ul>
+    </section>
+
+    <section id="dialogue-box" style="display:none;">
+      <h2>질문하기</h2>
+      <div id="question-buttons"></div>
+      <p><strong>답변:</strong> <span id="answer"></span></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
