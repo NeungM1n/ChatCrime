@@ -1,5 +1,13 @@
 let currentSuspectId = null;
-let suspectsCache = []; // 모든 용의자 캐싱
+let suspectsCache = [];
+
+window.onload = () => {
+  fetch('/api/story')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('story').innerText = data.description;
+    });
+};
 
 function loadSuspects() {
   fetch('/api/suspects')
@@ -8,12 +16,12 @@ function loadSuspects() {
       suspectsCache = data;
       const list = document.getElementById('suspect-list');
       list.innerHTML = '';
-      data.forEach(s => {
+      data.forEach(suspect => {
         const li = document.createElement('li');
-        li.textContent = `${s.name} - ${s.alibi}`;
+        li.textContent = `${suspect.name} - 알리바이: ${suspect.alibi}`;
         li.onclick = () => {
-          currentSuspectId = s.id;
-          showQuestions(s);
+          currentSuspectId = suspect.id;
+          showQuestions(suspect);
         };
         list.appendChild(li);
       });
@@ -43,6 +51,6 @@ function askQuestion(question) {
   })
     .then(res => res.json())
     .then(data => {
-      document.getElementById('answer').innerText = data.answer;
+      document.getElementById('answer').innerText = data.answer || "답변을 알 수 없습니다.";
     });
 }

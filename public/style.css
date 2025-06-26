@@ -1,8 +1,85 @@
+/* 전체 폰트 및 배경 */
 body {
-  font-family: sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  margin: 0;
   padding: 20px;
-  background-color: #f9f9f9;
+  line-height: 1.6;
 }
+
+/* 제목 */
 h1 {
-  color: #333;
+  color: #111827;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #374151;
+  font-size: 1.4rem;
+  margin-top: 20px;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 버튼 스타일 */
+button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 5px 5px 5px 0;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+/* 용의자 리스트 */
+#suspect-list {
+  list-style: none;
+  padding: 0;
+}
+
+#suspect-list li {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #e5e7eb;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#suspect-list li:hover {
+  background-color: #d1d5db;
+}
+
+/* 질문 버튼 그룹 */
+#question-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 답변 박스 강조 */
+#answer {
+  color: #111827;
+  font-weight: bold;
+  background-color: #fef3c7;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  display: inline-block;
 }
